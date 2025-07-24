@@ -41,9 +41,21 @@ Click 'Get Started' and sign up for a free Developer Plan.
 
 <img width="942" height="430" alt="image" src="https://github.com/user-attachments/assets/9aae167b-a64d-4846-b660-3416295c0f18" />  
 
-### 2. Install necessary software
+### 2. Connecting to Edge Impulse
 
-Edge Impulse allows you to collect your own data from a supported board (like ours). To use this feature, you will need to connect your board using the Edge Impulse CLI. If you already have the CLI installed or you plan on directly uploading this repo's data, go ahead and skip to the next section. For first-time users, installing the CLI (and its dependencies) can be a little tricky, so read the documentation carefully (instructions linked below). 
+Edge Impulse allows you to collect your own data from a supported board (like ours). To use this feature, you will need to connect your board through the Edge Impulse CLI. If you already have the CLI installed or you plan on directly uploading this repo's data, go ahead and skip to the next section. For first-time users, this setup procedure can be a little tricky, so read the instructions carefully. 
+
+**Summary of What to Expect**
+
+First, you will need to install some dependencies linked in the installation docs (linked below). After you finish, you should have the following softwares installed:
+- Python3
+- Node.js + Tools for Native Modules
+- Edge Impulse CLI
+- Arduino CLI
+
+Then, follow steps 1-4 in the installation docs to connect your board, flash it with the correct firmware, run the Edge Impulse CLI daemon, and start a new project. 
+
+Installation Docs: https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/arduino-nano-33-ble-sense
 
 **ATTENTION WINDOWS USERS:** Please read these tips before starting your installs. Don't make the same mistakes I did!
 > - When installing Node.js, make sure you select the check box for installing Tools for Native Modules. This will open up another script to install Chocolatey once Node.js finishes installing.
@@ -54,17 +66,13 @@ Edge Impulse allows you to collect your own data from a supported board (like ou
 > <img width="1156" height="622" alt="image" src="https://github.com/user-attachments/assets/07bb81d0-ee11-486e-b5f6-8f39ef26140e" />
 
 > - Visual Studio Build Tools will automatically be installed during the "Tools for Native Modules" installation process. If, when you run `npm install -g edge-impulse-cli --force`, you get a massive error where a lot of elements pertaining to VS can't be found, there's a chance your VS Build Tools installation was interrupted before completion. Open Visual Studio Installer from the Start menu and check the status of your VS Build Tools installation. If it's paused, resume the installation. Once it finishes, run `npm uninstall -g edge-impulse-cli` and then `npm install -g edge-impulse-cli` to try again.
-
-**Go to the installation docs:** https://docs.edgeimpulse.com/docs/edge-ai-hardware/mcu/arduino-nano-33-ble-sense
-
-After you finish, you should have the following softwares installed:
-- Python3
-- Node.js
-- Tools for Native Modules
-- Edge Impulse CLI
-- Arduino CLI
+> - The Edge Impulse firmware is necessary for running the Edge Impulse CLI daemon. So if you've flashed a different script to your Arduino board since the last time you connected to Edge Impulse, don't forget to flash this firmware again before running the daemon.
 
 ### 3. Collecting Data
+
+If you followed all the steps in the previous section, you should already have your Arduino board connected to a new project, and it will look something like this: 
+
+<img width="722" height="197" alt="image" src="https://github.com/user-attachments/assets/ca4a2bb8-67c1-4db0-b571-4862af3c4fba" />
 
 
 
