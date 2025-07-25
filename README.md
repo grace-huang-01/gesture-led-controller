@@ -73,7 +73,7 @@ When you have your Arduino board connected to a new project, the 'Devices' tab w
 
 ### 3. Uploading Data
 
-This section is for those of you who want to upload the data provided in this repo. If you have the Edge Impulse CLI installed and you're ready to collect your own data, go down to the next section to begin data collection! 
+This section is for those of you who want to upload the data provided in this repo. If you have the Edge Impulse CLI installed and you're ready to collect your own data, skip down to the next section to begin data collection! 
 
 - In your new project, go to the 'Data Acquisition' tab from the left menu. Click on '+ Add data' and select 'Upload data'.
 
@@ -91,7 +91,7 @@ This section is for those of you who want to upload the data provided in this re
 
 - Now that the data is loaded, you are ready to begin building a model. Go to **5. Creating Your Impulse** to get started!
 
-#### 4. Collecting Data
+### 4. Collecting Data
 
 
 
@@ -137,9 +137,58 @@ When you saved your impulse, two new tabs were added under 'Impulse Design' call
 
 ### 7. Training Your Model
 
-### 8. Deploying Your Model
+- Under 'Impulse Design' again, open 'Classifer'. We are going to leave the default Neural Network settings as is.
+- Scroll down to Neural Network architecture. Click on 'Add an extra layer'.
 
-### 9. LED Controller
+  <img width="341" height="344" alt="image" src="https://github.com/user-attachments/assets/52247404-fc94-4b94-ad89-f3f4e939b50c" />
+
+- Add a Dense layer and assign 3 neurons to it.
+<img width="596" height="220" alt="image" src="https://github.com/user-attachments/assets/66a087c1-7dd2-4e8a-bb6c-e18c5bd85510" />
+<img width="383" height="289" alt="image" src="https://github.com/user-attachments/assets/72848a14-fa45-4783-ab21-2b41a638484b" />
+
+- Save and train your neural network.
+
+  <img width="344" height="380" alt="image" src="https://github.com/user-attachments/assets/1f65bb50-4b3d-4345-959e-e5e13a360e23" />
+
+- Once the training completes, you will be able to see your model's performance in both statistical and graphical form.
+
+<img width="777" height="915" alt="image" src="https://github.com/user-attachments/assets/0623891d-c2ca-46df-805b-f37184d986ae" />
+<img width="388" height="400" alt="image" src="https://github.com/user-attachments/assets/52671245-f82e-4b5e-b9fc-c4274fa1a93f" />
+
+### 8. Testing Your Model
+
+- Under 'Impulse Design', open 'Model testing'.
+- Click 'Classify all' to run the model on your test data.
+
+<img width="350" height="320" alt="image" src="https://github.com/user-attachments/assets/3c40552c-fc5a-490b-b9fe-c712a1c3ca8f" />
+
+- As with the training stage, you will be able to see your model's testing performance in the tables and graph.
+
+<img width="766" height="891" alt="image" src="https://github.com/user-attachments/assets/6e3289a2-2ca1-4a33-805c-75d2d5de0e3b" />
+<img width="386" height="290" alt="image" src="https://github.com/user-attachments/assets/fe66e500-e66f-4569-af27-70041ab60738" />
+
+### 9. Deploying Your Model
+
+- Under 'Impulse Design', open 'Deployment'.
+- In the configuration box, search for 'Arduino Library' and set it as your deployment option.
+
+<img width="426" height="307" alt="image" src="https://github.com/user-attachments/assets/a1ca258b-30f5-46fa-b3a1-7abe6990afb1" />
+
+- Scroll down to 'Model Optimizations' and click on 'Run model testing' to compare the performance of the optimized and unoptimized versions of your model.
+
+<img width="421" height="412" alt="image" src="https://github.com/user-attachments/assets/0caad26d-7c45-41b2-8b95-e60d075e45ab" />
+
+- Based on the results, select which model you'd like to deploy and press 'Build'.
+
+<img width="421" height="317" alt="image" src="https://github.com/user-attachments/assets/7bcad926-f97e-4dc0-9802-6eafcb2914f6" />
+
+- Once your build has finished, you'll get this pop up and a zip file download.
+
+<img width="542" height="269" alt="image" src="https://github.com/user-attachments/assets/fd6cd0bf-8997-4a35-8534-d5ee199056a6" />
+
+- Open your Arduino IDE
+
+### 10. LED Controller
 
 ## License
 
