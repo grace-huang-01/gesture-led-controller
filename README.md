@@ -186,7 +186,35 @@ When you saved your impulse, two new tabs were added under 'Impulse Design' call
 
 <img width="542" height="269" alt="image" src="https://github.com/user-attachments/assets/fd6cd0bf-8997-4a35-8534-d5ee199056a6" />
 
-- Open your Arduino IDE
+- Open your Arduino IDE. Under the "Sketch" tab, go to "Include Library" > "Add .ZIP Library..." and add the zip file from your Downloads.
+
+<img width="863" height="524" alt="image" src="https://github.com/user-attachments/assets/a459f088-7a44-4d7d-9f9f-929f0ff1fd2f" />
+
+- Under "File", navigate to "Examples". Scroll all the way down and find your Edge Impulse project library. Select your board.
+
+> - Note: If you are using the Arduino Nano 33 BLE Sense or BLE Sense Lite, select "nano_ble33_sense". If you are using the Arduino Nano 33 BLE Sense Rev2, select "nano_ble33_sense_rev2".
+
+- Under your board, you will see multiple examples. Open the "nano_ble33_sense_fusion" example ("nano_ble33_sense_rev2_fusion" for Rev2 users).
+
+For Arduino Nano 33 BLE Sense and BLE Sense Lite:
+
+<img width="1459" height="1079" alt="image" src="https://github.com/user-attachments/assets/39c0bef9-832a-4e1f-9f95-5a3ff1209231" />
+
+For Arduino Nano 33 BLE Sense Rev2:
+
+<img width="1495" height="1079" alt="image" src="https://github.com/user-attachments/assets/fb65aa50-8ec4-4a9e-9f80-b2147e98de44" />
+
+- Now, with the fusion example open, select the Arduino Nano 33 BLE as your board, and the COM port your board is connected to.
+
+<img width="755" height="688" alt="image" src="https://github.com/user-attachments/assets/15543ab2-84a3-4220-8c48-457ad61d4492" />
+
+- Double click the reset button on your board to set it in Bootloader mode.
+
+- Click the right arrow in the Arduino IDE toolbar to compile and upload the code to your board.
+
+<img width="121" height="64" alt="image" src="https://github.com/user-attachments/assets/f0203d85-efef-4977-a4cd-35ee4d029179" />
+
+- Once the code is uploaded, open the Serial Monitor ("Tools" > "Serial Monitor" or CTRL+SHIFT+M). Give the board some vertical and sideways shakes. The Serial Monitor should print out the inference results in real-time!
 
 ### 10. LED Controller
 
