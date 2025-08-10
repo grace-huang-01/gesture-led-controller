@@ -93,9 +93,27 @@ This section is for those of you who want to upload the data provided in this re
 
 ### 4. Collecting Data
 
+We will be collecting data on Edge Impulse using the Arduino Nano 33 BLE Sense's built-in IMU. There are three gestures to collect: idle, left-right, and up-down.
 
+- Make sure your board is connected through the Edge Impulse CLI by running the Edge Impulse daemon command.
+- Go to 'Data Acquisition' from the left menu.
+- Under 'Collect data', you will be able to customize your data collection. We will leave the sample length and frequency at default. You should be collecting data from your connected board. Give your samples the appropriate label. We will be collecting data using the board's built-in IMU so select 'Inertial (accelerometer/gyroscope/magnetometer) as your sensor. See the example below for collecting a sample for the up-down label.
 
 <img width="347" height="365" alt="image" src="https://github.com/user-attachments/assets/b6abb39f-7739-4eb3-a200-d316d9c534fc" />
+
+- When you're ready, click 'Start sampling' and begin your gesture (hold still for idle, shake the board vertically for up-down, and shake the board horizontally for left-right).
+
+>Tips:
+>- Aim to collect a minimum of 30 samples per label. That estimates to around 5 minutes of data per label. The more data you collect, the better your model will be able to generalize!
+>- I started collecting the idle label, then up-down, then left-right. So my labels will be indexed as idle: 0, up-down: 1, left-right: 2. This is important to note for when we code the gesture controller later.
+>- After you've collected around 10 minutes of data, Edge Impulse might start glitching and say that your board is unable to collect a sample. If that happens, go to your terminal, interrupt the Edge Impulse daemon process, disconnect and reconnect your board, and rerun the Edge Impulse daemon. You will be able to continue collecting data now.
+>- If you are going for the 30 sample/label minimum, try to keep your movements fairly uniform within each label. Trying vastly different tempos and magnitudes of gestures within each label can throw off the model, due to the small dataset size.
+
+- Once you've collected your data, go to 'Dashboard' from the left menu and scroll down to the 'Danger zone'. Select 'Perform train/test split'. This will automatically divide all the data you've collected into a training set and a testing set.
+
+<img width="346" height="238" alt="image" src="https://github.com/user-attachments/assets/e9e74bcd-713b-48a2-a711-fb42e9ece90f" />
+
+Now that your dataset is ready, it's time to create your Edge Impulse model!
 
 ### 5. Creating Your Impulse
 
@@ -203,6 +221,9 @@ When you saved your impulse, two new tabs were added under 'Impulse Design' call
 - Click the right arrow in the Arduino IDE toolbar to compile and upload the code to your board.
 
 - Once the code is uploaded, open the Serial Monitor ("Tools" > "Serial Monitor" or CTRL+SHIFT+M). Give the board some vertical and sideways shakes. The Serial Monitor should print out the inference results in real-time!
+
+<img width="406" height="332" alt="image" src="https://github.com/user-attachments/assets/1b4ad689-ffb1-4300-b31b-d3b3ef726867" />
+
 
 ### 10. LED Controller
 
